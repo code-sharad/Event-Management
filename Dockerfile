@@ -25,7 +25,7 @@ COPY . .
 # Expose port
 EXPOSE 8000
 
-RUN python manage.py make_migrations
+RUN python manage.py makemigrations
 RUN python manage.py migrate
 
 # Run the application
