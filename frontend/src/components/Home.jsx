@@ -22,7 +22,7 @@ export default function Home(){
 
   },[selectD,setSelectD])
     return <>
-    <div  className='flex gap-12 my-24'>
+    <div  className='flex gap-12 my-24 mx-24'>
         <span className='underline cursor-pointer text-xl font-semibold' onClick={() => setSelectD('event')}>event</span>
         <span className='underline cursor-pointer text-xl font-semibold' onClick={() => setSelectD('venue')}>venue</span>
        </div>

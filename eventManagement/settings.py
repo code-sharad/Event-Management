@@ -128,3 +128,6 @@ ALLOWED_HOSTS = [
     'event-management-456128109301.asia-south1.run.app',
     'http://localhost:5173'
 ]
+CORS_ORIGIN_WHITELIST = [   
+    'http://localhost:5173'
+]
