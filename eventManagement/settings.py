@@ -125,5 +125,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ALLOWED_HOSTS = [
-    'event-management-456128109301.asia-south1.run.app'
+    'event-management-456128109301.asia-south1.run.app',
+    'http://localhost:5173'
 ]

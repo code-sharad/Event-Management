@@ -8,13 +8,13 @@ export default function Home(){
   const [venue,setVenue] = useState([])
   const [selectD,setSelectD] = useState('')
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/event/events')
+    fetch('https://event-management-456128109301.asia-south1.run.app/api/event/events')
       .then(res => res.json())
       .then(data => {
         setEvent(data)
       })
 
-       fetch('http://127.0.0.1:8000/api/venue/list')
+       fetch('https://event-management-456128109301.asia-south1.run.app/api/venue/list')
       .then(res => res.json())
       .then(data => {
         setVenue(data)
