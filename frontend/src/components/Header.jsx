@@ -22,23 +22,15 @@ function Header() {
               <span className="text-sm font-medium">Home</span>
             </a>
             <a
-              href="/events"
-              className="flex items-center gap-2 px-4 py-2 rounded-full text-white/70 
-              hover:text-white hover:bg-white/10 transition-all duration-200
-              border border-transparent hover:border-white/20"
-            >
-              <CalendarIcon className="w-4 h-4" />
-              <span className="text-sm font-medium">Events</span>
-            </a>
-            <a
-              href="/profile"
+              href="/login"
               className="flex items-center gap-2 px-4 py-2 rounded-full text-white/70 
               hover:text-white hover:bg-white/10 transition-all duration-200
               border border-transparent hover:border-white/20"
             >
               <UserCircleIcon className="w-4 h-4" />
-              <span className="text-sm font-medium">Profile</span>
+              <span className="text-sm font-medium">Login</span>
             </a>
+          
           </nav>
         </div>
       </div>

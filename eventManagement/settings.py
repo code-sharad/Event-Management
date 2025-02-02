@@ -132,12 +132,14 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+ALLOWED_HOSTS=['*']
 # Add these settings anywhere in the file.
 CORS_ALLOW_CREDENTIALS = True
 CSRF_TRUSTED_ORIGINS = ['http://localhost:5173']
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # Your Vite/React origin
     "http://127.0.0.1:5173",  # Optional alternative
+    "https://event-management-456128109301.asia-south1.run.app"  # Your Vercel/React origin
 ]
 SESSION_COOKIE_SAMESITE = 'Lax'  #
 SESSION_COOKIE_SECURE = False  

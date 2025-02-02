@@ -6,7 +6,7 @@ import VenueIndustry from './VenueCard'
 export default function Home(){
   const [event,setEvent] = useState([])
   const [venue,setVenue] = useState([])
-  const [selectD,setSelectD] = useState('')
+  const [selectD,setSelectD] = useState('event')
   useEffect(() => {
     fetch('https://event-management-456128109301.asia-south1.run.app/api/event/events')
       .then(res => res.json())
@@ -26,7 +26,7 @@ export default function Home(){
         <span className='underline cursor-pointer text-xl font-semibold' onClick={() => setSelectD('event')}>event</span>
         <span className='underline cursor-pointer text-xl font-semibold' onClick={() => setSelectD('venue')}>venue</span>
        </div>
-      {selectD === 'event'?<div className='flex gap-4 flex-wrap '>
+      {selectD === 'event'?<div className='flex gap-4 flex-wrap mx-24'>
         {
           event.map((e,i) => (
             <EventCard event={e} key={i}/>
