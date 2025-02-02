@@ -23,13 +23,13 @@ export default function Home(){
   },[selectD,setSelectD])
     return <>
     <div  className='flex gap-12 my-24 mx-24'>
-        <span className='underline cursor-pointer text-xl font-semibold' onClick={() => setSelectD('event')}>event</span>
-        <span className='underline cursor-pointer text-xl font-semibold' onClick={() => setSelectD('venue')}>venue</span>
+        <span className={`${selectD === 'event'?'underline underline-offset-4 font-bold':'font-light'} cursor-pointer text-xl `} onClick={() => setSelectD('event')}>Event</span>
+        <span className={`${selectD === 'venue'?'underline underline-offset-4 font-bold':'font-light'} cursor-pointer text-xl `} onClick={() => setSelectD('venue')}>Venue</span>
        </div>
-      {selectD === 'event'?<div className='flex gap-4 flex-wrap mx-24'>
+      {selectD === 'event'?<div className='px-8 flex-wrap'>
         {
           event.map((e,i) => (
-            <EventCard event={e} key={i}/>
+            <EventCard  event={e} key={i}/>
             
           ))
         }
