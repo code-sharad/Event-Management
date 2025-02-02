@@ -26,7 +26,7 @@ export default function Home(){
         <span className={`${selectD === 'event'?'underline underline-offset-4 font-bold':'font-light'} cursor-pointer text-xl `} onClick={() => setSelectD('event')}>Event</span>
         <span className={`${selectD === 'venue'?'underline underline-offset-4 font-bold':'font-light'} cursor-pointer text-xl `} onClick={() => setSelectD('venue')}>Venue</span>
        </div>
-      {selectD === 'event'?<div className='px-8 flex-wrap'>
+      {selectD === 'event'?<div className='px-8 lg:flex gap-x-4 gap-y-12 flex-wrap'>
         {
           event.map((e,i) => (
             <EventCard  event={e} key={i}/>

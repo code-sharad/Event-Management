@@ -26,10 +26,10 @@ const EventCard = ({ event }) => {
   }), [event.start_date, event.end_date]);
 
   return (
-    <article className="backdrop-blur-xl my-8 max-w-[400px] bg-white/10 rounded-2xl overflow-hidden 
+    <article className="backdrop-blur-xl my-12 max-w-[400px]  bg-white/10 rounded-2xl overflow-hidden 
     shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/20 hover:shadow-purple-500/10 
     transition-all duration-300 transform hover:-translate-y-1">
-      <div className="p-4 sm:p-8 bg-gradient-to-br from-slate-900/80 via-purple-900/60 to-slate-900/80">
+      <div className="p-4 sm:p-8 bg-gradient-to-br h-full  from-slate-900/80 via-purple-900/60 to-slate-900/80">
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-6">
           <h3 className="text-xl sm:text-2xl font-bold text-white drop-shadow-lg">
             {event.title}
