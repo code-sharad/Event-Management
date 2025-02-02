@@ -65,7 +65,7 @@ const EventCard = ({ event }) => {
         gap-4 pt-6 border-t border-white/20">
           <div>
             <span className="text-white/80 text-sm font-medium">Price</span>
-            <p className="text-2xl sm:text-3xl font-bold text-white drop-shadow-lg">₹{event.price} 400</p>
+            <p className="text-2xl sm:text-3xl font-bold text-white drop-shadow-lg">₹{Number(event.description.length)+ 400} </p>
           </div>
           <button
             onClick={() => setBook('Processing...')}
