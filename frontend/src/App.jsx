@@ -19,7 +19,7 @@ function App() {
                      hover:opacity-90 hover:scale-105 shadow-lg shadow-purple-500/30
                      w-full sm:w-auto text-center"
           >
-            Enter Dashboard
+            Click Me
           </Link>
         </div>
       </div>
