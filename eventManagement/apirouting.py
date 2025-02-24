@@ -18,8 +18,16 @@ api = NinjaAPI(title="Event API",openapi_extra={"info": {
         },"servers": [{"url": "/api"}],"externalDocs": {
             "description": "Find out more about Swagger",
             "url": "http://swagger.io"
-        },"tags": [ {"name": "Event","description": "Event operations"},{"name": "User","description": "User operations"},{"name": "Ticket","description": "Ticket operations"},{"name": "Venue","description": "Venue operations"}]}, version="1.0.0")
-
+        },"tags": [ {"name": "Event","description": "Event operations","externalDocs": {
+        "description": "Find out more",
+        "url": "http://swagger.io"
+      }},{"name": "User","description": "User operations"},{"name": "Ticket","description": "Ticket operations","externalDocs": {
+        "description": "Find out more",
+        "url": "http://swagger.io"
+      }},{"name": "Venue","description": "Venue operations","externalDocs": {
+        "description": "Find out more",
+        "url": "http://swagger.io"
+      }}]}, version="1.0.0")
 
 
 # @api.get('/set-csrf-token')
