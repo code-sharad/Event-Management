@@ -11,7 +11,7 @@ ticketRouter = Router()
 
 
 
-@ticketRouter.post('/book-ticket',response=TicketOut)
+@ticketRouter.post('/book-ticket',response=TicketOut,tags=['ticket'],description="Book a ticket")
 def bookTicket(request,payload:TicketIn):
     user = User.objects.get(id=payload.user_id)
     event = Event.objects.get(id=payload.event_id)
@@ -29,19 +29,19 @@ def bookTicket(request,payload:TicketIn):
         return {'success':'false'}
     
 
-@ticketRouter.get('/list',response=List[TicketOut],auth=django_auth)
+@ticketRouter.get('/list',response=List[TicketOut],auth=django_auth,tags=['ticket'],description="List all tickets")
 def getTicketList(request):
     return Ticket.objects.select_related('user','event').all()
 
 
-@ticketRouter.post('/type',response=TicketTypeOut)
+@ticketRouter.post('/type',response=TicketTypeOut,tags=['ticket'],description="Create a new ticket type")
 def createTicketType(request,payload:TicketTypeIn):
     event = Event.objects.get(id=payload.event_id)
     ticket = TicketType.objects.create(**payload.dict())
     ticket.event = event
     return ticket
 
-@ticketRouter.get('/type/list',response=List[TicketTypeOut])
+@ticketRouter.get('/type/list',response=List[TicketTypeOut],tags=['ticket'],    description="List all ticket types")
 def getTicketTypes(request):
     return TicketType.objects.all()
 
@@ -50,14 +50,14 @@ def getTicketTypes(request):
 #     event = Event.objects.get(id=event_id)
 #     return event.tickettype_set.all()
 
-@ticketRouter.delete('/{ticket_id}')
+@ticketRouter.delete('/{ticket_id}',response={200:dict},tags=['ticket'],description="Delete a ticket")
 def deleteTicket(request,ticket_id):
    ticket =  Ticket.objects.get(id=ticket_id)
    ticket.delete()
    return {'success':'true'}
     
 
-@ticketRouter.delete('/type/{ticket_id}')
+@ticketRouter.delete('/type/{ticket_id}',response={200:dict},tags=['ticket'],description="Delete a ticket type")
 def deleteTicketType(request,ticket_id:int):
     ticket = TicketType.objects.get(id=ticket_id)
     ticket.delete()
