@@ -11,7 +11,11 @@ from ninja import NinjaAPI
 # from django.middleware.csrf import get_token
 
 
-api = NinjaAPI(title="Event API", version="1.0.0")
+api = NinjaAPI(title="Event API", version="1.0.0",openapi_extra={"servers": [{"url": "/api"}],"externalDocs": {
+            "description": "Find out more about Swagger",
+            "url": "http://swagger.io"
+        }})
+
 
 
 # @api.get('/set-csrf-token')
