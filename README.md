@@ -2,6 +2,9 @@
 
 A web-based event management system built with Django Ninja and SQLLITE.
 
+OpenAPI
+https://event-management-456128109301.asia-south1.run.app/api/docs
+
 ## Features
 
 - User Authentication and Authorization
