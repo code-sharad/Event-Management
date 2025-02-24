@@ -8,7 +8,7 @@ from django.shortcuts import get_object_or_404
 eventRouter = Router()
 
 
-@eventRouter.post("/create", response={201: EventOut, 403: Error})
+@eventRouter.post("/create", response={201: EventOut, 403: Error},tags=["event"],description="Create a new event")
 def create_event(request, payload: EventInSchema):
     # if request.auth.role not in ["organizer", "admin"]:
         # return 403, {"error": "Permission denied"}
@@ -16,7 +16,7 @@ def create_event(request, payload: EventInSchema):
     return 201, event
 
 
-@eventRouter.get("/events", response=list[EventOut])
+@eventRouter.get("/events", response=list[EventOut],tags=["event"],description="List all events")
 def list_events(request, status: str = None):
     print(request)
     queryset = Event.objects.all()  
@@ -25,12 +25,12 @@ def list_events(request, status: str = None):
         queryset = queryset.filter(status=status)
     return queryset
 
-@eventRouter.get("/events/{event_id}", response=EventOut)
+@eventRouter.get("/events/{event_id}", response=EventOut,tags=["event"],description="Get a single event")
 def get_event(request, event_id: int):
     return Event.objects.get(id=event_id)
 
 
-@eventRouter.delete("/events/{event_id}")
+@eventRouter.delete("/events/{event_id}", response={200: dict},tags=["event"],description="Delete an event")
 def delete_event(request,event_id:int):
     e =  get_object_or_404(Event,id=event_id)
     e.delete()
