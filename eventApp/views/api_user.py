@@ -31,12 +31,12 @@ userRouter = Router()
 #     return access_token, refresh_token
 
 
-@userRouter.get('/set-csrf-token')
+@userRouter.get('/set-csrf-token',response={200:dict},tags=['user'],description="Get CSRF token")
 def get_csrf_token(request):
     return {'csrf_token':get_token(request)}
 
 # -------------------- USER API -------------------- #
-@userRouter.post("/register", response={201: UserOut, 400: Error})
+@userRouter.post("/register", response={201: UserOut, 400: Error},tags=["user"],description="Register a new user")
 def register(request, payload: UserCreate):
     if User.objects.filter(email=payload.email).exists():
         return 400, {"error": "Email already exists"}
@@ -48,7 +48,7 @@ def register(request, payload: UserCreate):
     )
     return 201, user
 
-@userRouter.post('/login')
+@userRouter.post('/login',tags=['user'],description="Login a user")
 def login_view(request, payload:UserIn):
 
     user = User.objects.filter(email=payload.email).first()
